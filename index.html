@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NUNCHI 사회 - 한국의 눈치 문화와 획일화</title>
+
+    <meta name="description" content="대한민국의 눈치 문화와 획일화된 사회 현상을 시각적으로 표현한 웹사이트입니다. 눈치법, 노스페이스 패딩, 무신사 냄새 등 한국 사회의 단면을 소개합니다.">
+    <meta name="keywords" content="눈치, NUNCHI, 한국문화, 눈치사회, 무신사냄새, 노스페이스, 획일화, 클론룩, 디자인">
+    <meta name="author" content="송보민">
+    <meta property="og:image" content="https://leebh.github.io/dimidifinal/thumbnail.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&amp;family=Noto+Serif+KR:wght@200..900&amp;display=swap" rel="stylesheet">
+
+    <style type="text/css">
+        /* [폰트 수정] 티몬 폰트 연결 주소 변경 (안정적인 로딩) */
+        @font-face {
+            font-family: 'Tmon';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+            font-weight: normal;
+            font-display: swap;
+        }
+
+        html {
+          font-family: "Noto Sans KR", sans-serif;
+          font-optical-sizing: auto;
+          font-weight: 400;
+          font-style: normal; line-height: 1.5;
+          overflow-x: hidden; 
+          width: 100%;
+        }
+
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0; padding: 0;
+        }
+        body,h1,p, ol, ul{margin: 0; padding: 0}
+        header,footer{padding-top: 200px;}
+        footer{padding-bottom: 100px;}
+        section{padding-top: 400px; padding-bottom: 400px;}
+        .wrap{width: 1000px; margin: auto; position: relative;}
+        h1{font-weight: 800; font-size:3rem;}
+        
+        h2{
+            /* [폰트 수정] snas-serif 오타 수정 -> sans-serif */
+            font-family: 'Tmon', sans-serif;
+            font-weight:700; 
+            font-size: 4rem;
+            padding-top: 30px;
+            line-height: 1.1;
+        }
+        
+        p{
+            font-family: "Noto Sans KR", sans-serif;
+            font-size:2rem;
+            padding-bottom: 50px;
+            padding-top: 3px;}
+        img{width: 100%; display: block;}
+        .move1{padding-right:800px;}
+       
+        .left-spacing{padding-left: 100px;}
+        .right-spacing{padding-right: 100px;}
+        .center-spacing{padding-left: 100px; padding-right: 100px; text-align: center;}
+        .bg-cookie{background: url(image3.jpg);
+            background-size: cover;
+            background-position: center;}
+        .bg-fall{background: url(image7.jpg);
+            background-size: cover;
+            background-position: center;}
+        .bg-nos{background: url(image8.jpg);
+            background-size: cover;
+            background-position: center;}
+        .bg-musinsa{background: url(image10.jpg);
+            background-size: cover;
+            background-position: center;}
+        .bg-face{background: url(image14.jpg);
+            background-size: cover;
+            background-position: center;}
+        .bg-end{background: url(image9.jpg);
+            background-size: cover;
+            background-position: center;}
+
+        .blue{background-color: #0055d5;}
+        .yellow{background-color: #ffb400;}
+        .green{background-color: #3c9700;}
+        .red{background-color: #eb3201;}
+        .black{background-color:black;}
+        .blue h2{color:white;}
+        .blue p{color:white}
+        .black h2{color:white;}
+        .black p{color:white;}
+        .yellow h2{color:black;}
+        .yellow p{color:black;}
+        .bg-cookie h2{color:white}
+        .bg-cookie p{color:white}
+        .flex{display: flex; justify-content: space-between;}
+        ul{list-style: none;}
+        ul li a{text-decoration: none;
+                display:block;
+                padding:8px 12px;
+                color:white;}
+            h0{color: white;}
+        ul li a:hover{background: white; color: black;
+                transition: all 1s;}
+
+        h0{font-weight:600; font-size: 1.2rem; padding: 8px 12px; cursor: pointer;}
+
+        .bg-header{background-image: url(image0.gif);
+            background-size: cover;
+            background-position: center;}
+        .belt{background-image: url(image11.gif);
+            background-size: cover;
+            background-position: center;}
+        .grind{background-image: url(grinder.gif);
+            background-size: cover;
+            background-position: center;}
+        header{padding: 600px 0px;}
+        h1{font-size: 3rem; color: dark-green;}
+        .special-padding {
+            padding-top: 400px !important;
+            padding-bottom: 200px !important;
+        }
+        .insta1{position: absolute;
+                left:-400px; top:-400px;    
+                width: 700px;     
+               
+        }
+        .insta2{position: absolute;
+                right:-300px; top:-100px;
+                width: 700px;     
+                
+        }
+        .insta3{position: absolute;
+                left:300px; top:300px;
+                width: 700px;     
+                z-index: 1;
+        }
+        .insta4{position: absolute;
+                left:600px; top:900px;
+                width: 600px;     
+                z-index: 2;
+        }
+
+        .content1{position: absolute;
+                left:350px; top:-500px; width: 1000px; z-index: 2;}
+        .content2{position: absolute;
+                left:-400px; top:900px; width:1000px;z-index: 2;}
+        .content3{position: absolute;
+                left:0px; top:2500px; z-index: 2;}
+        .content4{position: absolute;
+                left:-400px; top:500px; width:800px}
+        .content5{position: absolute;
+                left:-400px; top:-210px; width:1000px}
+        .content6{position: absolute;
+                left:-100px; top:-50px; z-index: 10}
+        .content7{position: absolute;
+                left:-400px; top:-300px; width: 1000px; z-index: 10}
+        .content8{position: absolute;
+                right:-400px; top:90px; width:1000px; z-index: 10}
+        .content9{position: absolute;
+                right:-200px; top:-300px; width:1500px; z-index: 10}
+        .jumper{position: absolute;
+                right:-50px; top:50px ; width: 1700px}
+        .nospace1{position: absolute;
+                right:-400px; top:-300px ;z-index: 3;}
+        .nospace2{position: absolute;
+                right:-200px; top:700px ;z-index: 3;}
+        .nospace3{position: absolute;
+                left:-200px; top:1700px ;z-index: 3;}
+        .nospace4{position: absolute;
+                left:-550px; top:2700px ;z-index: 3;}
+        .nospace5{position: absolute;
+                left:-200px; top:3700px ;z-index: 3;}
+        .nospace6{position: absolute;
+                right:-400px; top:4700px ;z-index: 3;}
+        .label1{position: absolute;
+                left:-300px; top:-500px;
+            transform: rotate(10deg);}
+        .label2{position: absolute;
+                left:-400px; top:600px;
+            transform: rotate(3deg);}
+        .label3{position: absolute;
+                right:-400px; top:1600px;
+            transform: rotate(-3deg);}
+        .label4{position: absolute;
+                right:-100px; top:2500px;
+            transform: rotate(3deg);}
+        .label5{position: absolute;
+                right:-500px; top:3500px;
+            transform: rotate(-3deg);}
+        .label6{position: absolute;
+                left:-200px; top:4500px;
+                transform: rotate(3deg);}
+        .eye{position: absolute;
+                left:0px; top:-600px}
+        .nose{
+            position: absolute;
+            left:-300px; top:200px;
+            width: 1400px; z-index: 100}
+        
+        .smell{
+            position: absolute;
+            left:530px; top:200px;
+            width: 1200px; z-index: 200}
+        .newspaper{position: absolute;
+                left:0px; top:0px}
+
+        /* 얼굴 이미지 세부 조정 */
+         .face1 {
+            position: absolute;
+            left: 600px;
+            width: 1000px;
+            /* 40초 동안 천천히 떨어짐 / 바로 시작 */
+            animation: fall-rotate 40s linear 0s infinite; 
+        }
+
+        .face2 {
+            position: absolute;
+            left: 200px;
+            width: 1000px;
+            /* 50초 동안 아주 천천히 / -10초(이미 10초 전부터 떨어지고 있었던 것처럼) */
+            animation: fall-rotate 50s linear -10s infinite; 
+        }
+
+        .face3 {
+            position: absolute;
+            left: -200px;
+            width: 1000px;
+            /* 35초 동안 / -5초 딜레이 */
+            animation: fall-rotate 35s linear -5s infinite; 
+        }
+
+        .face4 {
+            position: absolute;
+            right: -500px;
+            width: 1000px;
+            /* 55초 (제일 큼) / -20초 딜레이 */
+            animation: fall-rotate 55s linear -20s infinite; 
+            z-index: 5; /* 큰 거라 앞으로 좀 뺌 */
+        }
+
+        .face5 {
+            position: absolute;
+            right: -600px;
+            width: 700px;
+            /* 45초 / -8초 딜레이 */
+            animation: fall-rotate 45s linear -8s infinite; 
+        }
+
+        .face6 {
+            position: absolute;
+            right: 600px;
+            width: 800px;
+            /* 38초 / 0초 딜레이 */
+            animation: fall-rotate 38s linear 0s infinite; 
+        }
+
+        .face7 {
+            position: absolute;
+            right: 400px;
+            width: 900px;
+            /* 42초 / -15초 딜레이 */
+            animation: fall-rotate 42s linear -15s infinite; 
+        }
+
+        .face8 {
+            position: absolute;
+            left: 800px;
+            width: 700px;
+            /* 32초 (작은 건 좀 빠르게) / -3초 딜레이 */
+            animation: fall-rotate 32s linear -3s infinite; 
+        }
+
+        .face9 {
+            position: absolute;
+            left: 200px;
+            width: 800px;
+            /* 48초 / -25초 딜레이 */
+            animation: fall-rotate 48s linear -25s infinite; 
+        }
+
+        .face10 {
+            position: absolute;
+            right: 600px;
+            width: 1000px;
+            /* 36초 / -6초 딜레이 */
+            animation: fall-rotate 36s linear -6s infinite; 
+        }
+
+        .face11 {
+            position: absolute;
+            left: 200px;
+            width: 1000px;
+            /* 40초 / -12초 딜레이 */
+            animation: fall-rotate 40s linear -12s infinite; 
+        }
+
+
+        .insta-section {height:3000px;}
+        .nospace-section {height:6000px;}
+        .face-section {height:5000px;}
+          /* 섹션의 위아래 여백을 없애고 너비를 100%로 설정 */
+        .full-width-section {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            width: 100%;
+        }
+        
+        /* 이미지를 가로로 꽉 채우고 비율 유지 */
+        .full-img {
+            width: 100%;
+            height: auto;
+            display: block; /* 이미지 아래 미세한 공백 제거 */
+        }
+        
+        /* 텍스트 부분에만 별도로 여백을 줌 */
+        .text-box {
+            padding-top: 100px;
+            padding-bottom: 200px;
+        }
+
+
+
+        /* 1. 잘림 없는 배경용 섹션 (기준점) */
+        .uncropped-section {
+            position: relative; 
+            padding: 0 !important; 
+            width: 100%;
+            overflow: hidden; 
+        }
+
+        /* 2. 실제 이미지 (바닥에 깔리는 용도) */
+        .bg-img-full {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 3. 내용물 겹치기 (이미지 위에 띄움) */
+        .overlay-content {
+            position: absolute; 
+            top: 100px;
+            left: 200px;
+            width: 100px;
+            height: 100px;
+        }
+
+        /* image2 크기 조정 */
+        .big-img {
+            width: 160%;       
+            margin-left: -30%; 
+            max-width: none;   
+        }
+        /* image 5 세부조정 */
+        .pos-image5 {
+            position: absolute;
+            right: -400px;
+            top: -500px;    
+            width: 1000px;
+            transform: rotate(10deg);
+            z-index: 3;
+
+        }
+           /* 첫 번째 눈 위치 */
+        .pos-eye1 {
+            position: absolute;
+            top: -300px;      
+            right: -200px;       
+            width: 1500px;    
+        }
+
+        /* 두 번째 눈 위치 */
+        .pos-eye2 {
+            position: absolute;
+            top: 400px;
+            right: 400px;  
+            width: 1200px;
+            transform: rotate(-20deg); 
+        }
+
+        /* 세 번째 눈 위치 */
+        .pos-eye3 {
+            position: absolute;
+            top: 1000px; 
+            left: 400px;
+            width: 1500px;
+            transform: rotate(-35deg); 
+        }
+        .pos-eye4 {
+            position: absolute;
+            top: 800px; 
+            left: 200px;
+            width: 800px;
+            transform: rotate(15deg); 
+        }
+        
+        .pos-eye5 {
+            position: absolute;
+            top: 1700px; 
+            left: -200px;
+            width: 1000px;
+            transform: rotate(5deg); 
+        }
+
+        /* 텍스트 위치 */
+        .pos-text-group {
+            position: absolute;
+            top: 1200px;      
+            left: -200px;     
+            width: 600px;    
+        }
+
+         /* 이미지 12 위치 */
+        .pos-img12 {
+            position: absolute;
+            left: 700px;       
+            top: 100px;       
+            width: 1000px;
+            transform: rotate(-45deg);    
+            z-index: 1;
+        }
+
+        /* 텍스트 1 위치 (똑같은 옷 설명) */
+        .pos-text1 {
+            position: absolute;
+            right: 700px;      
+            top: 150px;      
+            width: 550px;    
+            text-align: left; 
+            z-index: 2;
+        }
+
+        /* 이미지 13 위치  */
+        .pos-img13 {
+            position: absolute;
+            right: 700px;      
+            top: 900px;      
+            width: 900px;
+            transform: rotate(45deg);     
+            z-index: 1;
+        }
+
+        /* 텍스트 2 위치 (무신사 설명) */
+        .pos-text2 {
+            position: absolute;
+            left: 350px;       
+            top: 1700px;      
+            width: 1000px;    
+            text-align: left; 
+            z-index: 2;
+        }
+         /* 쿠키 섹션 설정 (파란색 배경 + 높이 고정) */
+        .cookie-scene {
+            background-color: #0055d5; /* 파란색 배경 */
+            height: 900px;             /* 요소들이 움직일 충분한 높이 */
+            position: relative;        /* 포지션 기준점 */
+            overflow: hidden;          /* 튀어나간 손 이미지 숨기기 */
+        }
+        
+        /* 텍스트가 이미지보다 위에 오도록 설정 */
+        .cookie-scene h2, .cookie-scene p {
+            position: relative;
+            z-index: 20; 
+            color: white; /* 파란 배경이니 글씨는 흰색 */
+        }
+
+        /* 쿠키 섹션 텍스트 위치 */
+        .pos-cookie-text {
+            position: absolute;
+            top: 150px;      
+            left: -100px;     
+            width: 500px;    
+            text-align: left;
+        }
+        .pos-cookie-text h2 { 
+            color: white; 
+            margin-bottom: 20px; /* 제목과 본문 사이 간격 */
+        }
+        .pos-cookie-text p { 
+            color: white; 
+        }
+         /* 1. 핸드1 움직임 (오른쪽 위 대각선에서 들어옴) */
+        @keyframes hand1-grab {
+            0% { transform: translate(400px,-600px); } /* 화면 밖(오른쪽 위) */
+            50% { transform: translate(0, 0); }         /* 쿠키 잡는 위치 (원점) */
+            100% { transform: translate(400px, -600px); } /* 다시 나감 */
+        }
+
+        /* 2. 핸드3 움직임 (오른쪽 옆에서 쑥 들어옴) */
+        @keyframes hand3-grab {
+            0% { transform: translate(800px, 100px); }  /* 화면 밖(오른쪽) */
+            50% { transform: translate(0, 0); }         /* 쿠키 잡는 위치 */
+            100% { transform: translate(800px, 100px); } /* 다시 나감 */
+        }
+
+        /* 3. 핸드2 움직임 (위쪽에서 내려옴) */
+        @keyframes hand2-grab {
+            0% { transform: translate(100px, -800px); } /* 화면 밖(위) */
+            50% { transform: translate(0, 0); }         /* 쿠키 잡는 위치 */
+            100% { transform: translate(100px, -800px); } /* 다시 나감 */
+        }
+
+        /* 4. 쿠키 사라짐 (손이 닿는 50% 시점에 사라짐) */
+        @keyframes cookie-vanish {
+            0% { opacity: 1; }
+            49% { opacity: 1; } 
+            50% { opacity: 0; } 
+            100% { opacity: 0; }
+        }
+
+         /* --- [쿠키 설정] --- */
+        
+        /* 쿠키 1: 1타 (핸드1이 1초쯤에 가져감) */
+        .pos-c1 { 
+            position: absolute; left: 450px; top: 450px; width: 450px; z-index: 5; 
+            animation: cookie-vanish 2.5s linear 0s forwards; 
+        }
+
+        /* 쿠키 2: 2타 (핸드3이 가져감 / 2.5초 대기 후 시작) */
+        .pos-c2 { 
+            position: absolute; left: 600px; top: 300px; width: 450px; z-index: 4; 
+            animation: cookie-vanish 2.5s linear 2.5s forwards; 
+        }
+
+        /* 쿠키 3: 3타 (핸드2가 가져감 / 5초 대기 후 시작) */
+        .pos-c3 { 
+            position: absolute; left: 750px; top: 150px; width: 450px; z-index: 3; 
+            animation: cookie-vanish 2.5s linear 5s forwards; 
+        }
+
+        /* 쿠키 4: 생존 */
+        .pos-c4 { 
+            position: absolute; left: 900px; top: 0px; width: 450px; z-index: 2; 
+        } 
+
+
+        /* --- [손 설정] --- */
+        /* 중요: 여기에는 rotate(회전)를 쓰지 않습니다. 애니메이션에서 다 해줍니다. */
+
+        /* 핸드 1 (순서 1: 바로 시작) */
+        .pos-h1 { 
+            position: absolute; 
+            left: -700px; top: -700px; /* 쿠키 잡는 위치 */
+            width: 1400px; z-index: 10; 
+            /* 2.5초 재생 / 0초 딜레이 / both 적용 */
+            animation: hand1-grab 2.5s ease-in-out 0s 1 both; 
+        }
+
+        /* 핸드 3 (순서 2: 2.5초 뒤 시작) */
+        .pos-h3 { 
+            position: absolute; 
+            left: 500px; top: 200px; /* 쿠키 잡는 위치 */
+            width: 1400px; z-index: 10; 
+            /* 2.5초 재생 / 2.5초 딜레이 / both 적용 */
+            animation: hand3-grab 2.5s ease-in-out 2.5s 1 both; 
+        }
+
+        /* 핸드 2 (순서 3: 5초 뒤 시작) */
+        .pos-h2 { 
+            position: absolute; 
+            left: 650px; top:-600px; /* 쿠키 잡는 위치 */
+            width: 1400px; z-index: 10; 
+            /* 2.5초 재생 / 5초 딜레이 / both 적용 */
+            animation: hand2-grab 2.5s ease-in-out 5s 1 both; 
+        }
+
+          /* 1. 좌우로 5도씩 흔들리는 동작 정의 */
+        @keyframes shake-lightly {
+            0%   { transform: rotate(0deg); }
+            25%  { transform: rotate(-5deg); } /* 왼쪽으로 5도 */
+            75%  { transform: rotate(5deg); }  /* 오른쪽으로 5도 */
+            100% { transform: rotate(0deg); }  /* 제자리 */
+        }
+
+        /* 2. 마우스를 올렸을 때(:hover) 실행하는 클래스 */
+        .hover-shake:hover {
+            /* 0.5초 속도로, 부드럽게(ease-in-out), 무한반복(infinite) */
+            animation: shake-lightly 0.5s ease-in-out infinite;
+            cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 (선택사항) */
+        }
+
+         /* 회전하며 떨어지는 동작 (위 -> 아래) */
+        @keyframes fall-rotate {
+            0% {
+                top: -500px;             /* 시작: 화면 훨씬 위쪽 */
+                transform: rotate(0deg);  /* 회전 시작 */
+            }
+            100% {
+                top: 5000px;              /* 끝: 섹션 바닥보다 더 아래로 */
+                transform: rotate(360deg);/* 한 바퀴 뱅글 돔 */
+            }
+        }
+            /* 1. 수직 낙하 동작 (위 -> 아래) */
+        @keyframes fall-straight {
+            0% {
+                top: -900px;   /* 화면 위쪽 바깥 */
+                opacity: 1;
+            }
+            80% {
+               opacity: 1;     /* 바닥 근처까지는 선명하게 */
+            }
+            100% {
+                top: 1200px;    /* t2 이미지 위로 충분히 내려오게 설정 */
+                opacity: 0;    /* 끝날 때 자연스럽게 사라짐 */
+            }
+        }
+
+        /* 2. 테트리스 랩 (운동장) */
+        .tetris-wrap {
+            position: relative;
+            height: 600px;
+            /* ★중요: overflow: hidden을 지웠습니다! 이제 밖으로 나가도 안 잘립니다 */
+            margin-bottom: 0px; 
+        }
+
+        /* 3. 테트리스 조각 공통 설정 */
+        .tetris0, .tetris1, .tetris2, .tetris3, .tetris4 {
+            position: absolute;
+            top: -300px;
+            z-index: 100; /* ★중요: t2보다 훨씬 높은 숫자를 줘서 앞으로 뺍니다 */
+        }
+
+        .tetris0 img, .tetris1 img, .tetris2 img, .tetris3 img, .tetris4 img {
+            width: 100%; display: block;
+        }
+
+        /* --- [위치 & 속도] --- */
+        .tetris0 {
+            left: -800px; width: 1500px;
+            animation: fall-straight 3s linear 0s infinite; 
+        }
+        .tetris1 {
+            left: 100px; width: 1500px;
+            animation: fall-straight 4s linear -1s infinite; 
+        }
+        .tetris2 { /* t5 */
+            left: -300px; width: 1700px;
+            animation: fall-straight 3.5s linear -2s infinite; 
+        }
+        .tetris3 {
+            left: 200px; width: 1500px;
+            animation: fall-straight 5s linear -0.5s infinite; 
+        }
+        .tetris4 {
+            left: 850px; width: 1500px;
+            animation: fall-straight 4.5s linear -3s infinite; 
+        }
+
+
+        
+
+</style>
+</head>
+<body>
+    
+    <section class="uncropped-section">
+        <img src="image0.gif" class="bg-img-full">
+        
+        <div class="overlay-content">
+            <div class="wrap">
+                <h1 class="center-spacing"></h1>
+                <p class="center-spacing"></p>
+            </div>
+        </div>
+    </section>
+    <section class="blue">
+        <div class="wrap">
+            <img src="image1.jpg">
+        </div>
+    </section>
+    <section class="yellow">
+        <div class="wrap">
+            <img src="image2.jpg" class="big-img">
+            <h2 class="left-spacing">NUNCHI란 무엇인가?</h2>
+            <p class="left-spacing">'공기를 읽는다'라는 표현이 있습니다. 눈치란 말하지 않고도 상대방의 의중을 살펴 ‘알아서’ 행동하게끔 하는 문화적 행위양식으로, 일종의 비언어적 의사소통 방식이라 할 수 있습니다.</p>
+        </div>
+    </section>
+    <section class="cookie-scene">
+        <div class="wrap">
+            <div class="pos-cookie-text">
+                <h2>대한민국 눈치법<br>제 1조항</h2>
+                <p>3명이서 4개의 쿠키를 나눠먹는다면,<br>마지막 조각은 항상 남겨둡니다.</p>
+            </div>
+            <div class="pos-c1"><img src="cookie.png"></div>
+            <div class="pos-c2"><img src="cookie.png"></div>
+            <div class="pos-c3"><img src="cookie.png"></div>
+            <div class="pos-c4"><img src="cookie.png"></div>
+            <div class="pos-h1"><img src="hand1.png"></div> 
+            <div class="pos-h2"><img src="hand2.png"></div>
+            <div class="pos-h3"><img src="hand3.png"></div>
+        </div>
+    </section>
+    <section class="blue">
+        <div class="wrap">
+            <img src="image4.jpg" class="big-img" style="margin-top: 300px;">
+            <h2 class="left-spacing">대한민국 눈치법 제 2조항</h2>
+            <p class="left-spacing">한국은 "동의하지 않는다" 라는 말을 할때는 최대한 빙빙 돌려말합니다.. 반면에 미국은 동의하지 않으면 "I disagree"라고 직설적으로 표현하는 편입니다.  </p>
+        </div>
+    </section>
+    <section class="yellow" style="padding-top: 400px;
+            padding-bottom: 400px;">
+        <div class="wrap">
+            <div class="pos-image5">
+                <img src="image5.png" class="hover-shake">
+            </div>
+            <div class="content5">
+            <h2 class="right-spacing">한국의 ‘눈치 문화’<br>&lt;뉴욕타임즈&gt;에 실리다</h2>
+            <p class="right-spacing">“눈치가 한국인들에게 집단주의와 내향성, 그리고 무엇보다 '조용히 입을 다물고 있는 상태'를 유지하도록 요구하고 있다.”<br>(뉴욕 타임즈)</p> </div>
+        </div>
+    </section>
+   <section class="black" style="height: 2500px; position: relative;">
+        <div class="wrap">
+            
+            <div class="pos-eye1">
+                <img src="eye1.png">
+            </div>
+
+            <div class="pos-eye2">
+                <img src="eye2.png">
+            </div>
+            <div class="pos-eye3">
+                <img src="eye3.png">
+            </div>
+            <div class="pos-eye4">
+                <img src="eye4.png">
+            </div>
+            <div class="pos-eye5">
+                <img src="eye6.png">
+            </div>
+
+            <div class="pos-text-group">
+                <h2>눈치사회,<br>좋은 사회일까?</h2>
+                <p>어떻게 보면 눈치사회, 눈치문화는 꽤 바람직해 보입니다. 사실 IMF 금모으기 운동, 코로나 시기에도 우리나라의 특유의 눈치문화는 집단주의적 사회를 형성하여 국민들끼리 똘똘 뭉치도록 도와준 주요 요인입니다.<br>하지만 정말 장점만 있을까요?</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="uncropped-section">
+        <img src="image7.jpg" class="bg-img-full">
+        <div class="overlay-content">
+            <div class="wrap">
+                <h2 class="right-spacing">눈치사회의 역효과</h2>
+                <p class="right-spacing">타인과 공동체에 대한 관심이 많은 만큼, 한국인들은 자신에 대한 타인의 시선을 지나치게 의식합니다. 이러한 현상은 한국인들의 패션, 메이크업 등 외적인 부분에서 쉽게 찾을 수 있습니다. </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="uncropped-section">
+        <img src="image8.jpg" class="bg-img-full">
+        <div class="overlay-content">
+            <div class="wrap">
+                <div class="jumper">
+                    <img src="j7.png" class="hover-shake">> 
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section class="yellow">
+        <div class="wrap">
+            <div class="content7">
+            <h2 class="left-spacing">2000년대 초반의 노스페이스 열풍</h2>
+            <p class="left-spacing">실제로 노스페이스가 '교복' 이라고 착각할 사람이 있을 만큼 당시 모든 고등학생들은 날이 더우나 추우나 노스페이스만 입고 다녔습니다. 그 이유는 무엇일까요?</p> </div>
+            <div class="content8">
+            <h2 class="right-spacing">나도 무리에 속하고 싶어!</h2>
+            <p class="right-spacing">학생들은 '노스페이스'를 입음으로써 자신이 다른 학생들과 마찬가지로 무리에 속해있다는 안정감을 느낍니다. 다른 학생들이 무엇을 입는지, 나만 유행에 뒤쳐진 것은 아닌지 '눈치'보며 값비싼 가격에도 불구하고 노스페이스 잠바를 구입하는 것이죠.</p> </div>
+        </div>
+    </section>
+    <section class="yellow nospace-section">
+        <div class="wrap">
+            <div class="content4">
+            <h2 class="left-spacing">노스페이스에 숨은 계급</h2>
+            <p class="left-spacing">이 뿐만이 아닙니다. 노스페이스 모델들은 여러 종류로 나뉘고 가격도 다 다릅니다. 더 비싼 모델의 잠바일 수록 더 높은 계급에 속할 수 있으며, 반대로 값싼 모델의 잠바를 입으면 '찌질이' 라고 불리는 등 조롱을 받습니다. </p> </div>
+            <div class="nospace1">
+            <img src="j1.png"> </div>
+            <div class="label1">
+            <img src="l1.png" class="hover-shake"> </div>
+            <div class="nospace2">
+            <img src="j2.png"> </div>
+            <div class="label2">
+            <img src="l2.png" class="hover-shake"> </div>
+            <div class="nospace3">
+            <img src="j3.png"> </div>
+            <div class="label3">
+            <img src="l3.png" class="hover-shake"> </div>
+            <div class="nospace4">
+            <img src="j4.png"> </div>
+            <div class="label4">
+            <img src="l4.png" class="hover-shake"> </div>
+            <div class="nospace5">
+            <img src="j5.png"> </div>
+            <div class="label5">
+            <img src="l5.png" class="hover-shake"> </div>
+            <div class="nospace6">
+            <img src="j6.png"> </div>
+            <div class="label6">
+            <img src="l6.png" class="hover-shake"> </div>
+        </div>
+    </section>
+    <section class="yellow">
+        <div class="wrap">
+            <div class="eye">
+            <img src="eye3.png"> </div>
+            <h2 class="right-spacing">원인은 바로 '눈치 사회'</h2>
+            <p class="right-spacing">이 모든 문제들의 원인은 바로'눈치보는 한국 사회'입니다. 학교라는 작은 사회 안에서도 학생들은 서로 눈치를 보며 유행에 뒤쳐지지 않으려고 애쓰고, 결국 모두가 획일화 되는 문제가 발생하죠.<br>이러한 문화는 사라지는게 맞습니다.</p>
+        </div>
+    </section>
+
+   <section class="uncropped-section">
+        <img src="image10.jpg" class="bg-img-full">
+        <div class="overlay-content">
+            <div class="wrap">
+                <div class="nose"><img src="nose.png" class="hover-shake"></div>
+                <div class="smell"><img src="smell.png"></div>  
+            </div>
+        </div>
+    </section>
+
+        <section class="red" style="height: 2500px; position: relative;">
+        <div class="wrap">
+            
+            <div class="pos-img12">
+                <img src="image12.png">
+            </div>
+
+            <div class="pos-text1">
+                <h2>똑같은 옷을 입은<br>사람들</h2>
+                <p>한국에서 길을 가다보면 나와 똑같은 옷을 입고 있는 사람들을 어렵지 않게 찾아볼 수 있습니다.왜일까요?</p>
+            </div>
+
+            <div class="pos-img13">
+                <img src="image13.png">
+            </div>
+
+            <div class="pos-text2">
+                <h2>클론룩의 명대사,<br>무신사</h2>
+                <p>클론룩, 즉 옷을 복제한 것 처럼 비슷한 스타일의 옷들로 알려진 브랜드가 있습니다. 바로 무신사 입니다. 한국인들은 유행에 뒤처지는 것을 두려워합니다. 눈치 사회속에서 이들은 유행에 뒤쳐지지 않고 무난한 옷을 필요로하죠. 브랜드 무신사는 이렇게 무난히 입고 다닐만한 옷들을 비교적 저렴한 가격에 판매해 많은 인기를 얻게 되었고, 그만큼 많은 사람들이 같은 옷을 입게되는 결과를 초래했습니다.
+                <br>이런 현상을 조롱하는 “무신사 냄새”라는 말도 생겨났습니다. 유명한 인터넷 방송 snl에서 “아 무신사 냄새 지리네” 라는 멘트를 하여 큰 화제가 되었습니다.</p>
+            </div>
+
+        </div>
+    </section>
+
+     <section class="red full-width-section">
+        <img src="image11.gif" class="full-img">
+        
+        <div class="wrap text-box">
+            <h2 class="left-spacing">눈치 사회와 무신사 냄새</h2>
+            <p class="left-spacing">항상 눈치를 보며 유행을 따라가기 바쁜 눈치사회. 유행을 따라가려다 보니 개인의 개성을 살리는 옷 보다는, 튀지 않는 남들과 비슷한 옷들을 입게됩니다. 비슷한 옷을 입는다는 것이 나쁘다는 것은 전혀 아닙니다.
+            <br>하지만 본인만의 매력을 살릴 수 있는 옷을 입어보면 어떨까요? </p>
+        </div>
+    </section>
+
+    <section class="uncropped-section">
+        <img src="image14.jpg" class="bg-img-full">
+        <div class="overlay-content">
+            <div class="wrap">
+                 </div>
+        </div>
+    </section>
+
+    <section class="blue insta-section">
+        <div class="wrap">
+            <div class="insta1">
+            <img src="image15.png"> </div>
+            <div class="insta2">
+            <img src="image16.png"> </div>
+            <div class="insta3">
+            <img src="image17.png"> </div>
+            <div class="content1">
+            <h2 class="right-spacing">"요즘 유행하는 얼굴"이 뭐야?</h2>
+            <p class="right-spacing">'요즘 유행하는 얼굴'이라는 말은 한국에서만 볼 수 있는 말로, 획일화된 한국의 미의 기준을 내포하고 있습니다.</p> </div>
+            <div class="insta4">
+            <img src="image18.png"> </div>
+            <div class="content2">
+            <h2 class="left-spacing">'짧은 중안부'' 유행</h2>
+            <p class="left-spacing">대표적인 사례로는 '짧은 중안부' 열풍이 있습니다. 여성들 사이에서 블랙핑크 제니, 엔믹스 설윤과 같은 얼굴의 중안부 부분이 짧아 귀엽고 어려보이는 얼굴이 유행을 하기 시작하면서, 이와 관련된 성형시술 건수가 급증하였습니다.</p> </div>
+
+            <div class="content3">
+            <h2 class="left-spacing">다양하고 아름다운 우리들</h2>
+            <p class="left-spacing">아름다움은 하나로 규정할 수 없습니다. 우리는 모두 다르기에 가치있는 것이죠. 사람은 누구나 자신만이 가질 수 있는 대체 불가한 매력을 가지고 있습니다. 만약 자신의 외모가 사회가 정한 미의 기준에 부합하지 않더라도, 자신만의 매력을 살려 자기 자신을 충분히 아름답게 꾸밀 수 있습니다. </p> </div>
+        </div>
+    </section>
+    <section class="black face-section">
+        <div class="wrap">
+            <div class="face1">
+            <img src="f1.png"> </div>
+            <div class="face2">
+            <img src="f2.png"> </div>
+            <div class="face3">
+            <img src="f3.png"> </div>
+            <div class="face4">
+            <img src="f4.png"> </div>
+            <div class="face5">
+            <img src="f5.png"> </div>
+            <div class="face6">
+            <img src="f6.png"> </div>
+            <div class="face7">
+            <img src="f7.png"> </div>
+            <div class="face8">
+            <img src="f8.png"> </div>
+            <div class="face9">
+            <img src="f9.png"> </div>
+            <div class="face10">
+            <img src="f10.png"> </div>
+            <div class="face11">
+            <img src="f11.png"> </div>
+            <div class="content6">
+            <h2 class="right-spacing">획일화된 사회, 눈치사회</h2>
+            <p class="right-spacing">눈치문화의 악영향은 여기에서 끝나지 않습니다. 패션, 외모 등의 겉모습에 이어 우리들의 사고 방식, 삶 그 자체 마저 획일화 될 수 있습니다.</p> </div>
+        </div>
+    </section>
+    <section class="full-width-section">
+        <img src="grinder.gif" class="full-img">
+    </section>
+      <section class="black tetris-section">
+        <div class="wrap tetris-wrap">
+            <div class="tetris0">
+            <img src="t0.png"> </div>
+            <div class="tetris1">
+            <img src="t1.png"> </div>
+            <div class="tetris2">
+            <img src="t5.png"> </div>
+            <div class="tetris3">
+            <img src="t3.png"> </div>
+            <div class="tetris4">
+            <img src="t4.png"> </div>
+        </div>
+        <img src="t2.png" style="width: 100%; max-width: none; display: block;">
+        
+    </section>
+    <section class="blue">
+        <div class="wrap">
+            <div class="content9">
+            <h2 class="right-spacing">마무리</h2>
+            <p class="right-spacing">눈치 사회속에서 우리는 점점 획일화되어가는 듯 보입니다. 이런 눈치 사회 속에서 우리는 자신의 개성과 자신 그 자체를 어떻게 지켜나가야할까요? <br>우리는 현재 우린나라에 뿌리내린 눈치 사회를 받아들되, 자신만의 개성과 빛깔을 찾아가는 것에 더욱 집중할필요가 있습니다. 타인이 나에 대해 어떻게 생각하는지 보다 내가 나를 어떻게 생각하는지를 더 중요하게 생각하고, 남들과 자신과의 비교를 멈추어야합니다.<br>여러분들도 이제 그만 눈치 사회속에서 벗어나 자신만의 개성을 추구해보는 것이 어떨까요?</p> </div>
+        </div>
+    </section>
+
+    <section class="uncropped-section">
+        <img src="image9.jpg" class="bg-img-full">
+        <div class="overlay-content">
+            <div class="wrap"></div>
+        </div>
+    </section>
+
+    <footer class="black">
+        <div class="wrap">
+            <p>"NUNCHI 사회©송보민 모든 권리 보유"
+                (서울과학 기술대학교 25100977@seoultech.ac.kr)</p>
+        </div>
+    </footer>
+</body></html>
